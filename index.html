@@ -93,47 +93,78 @@
             .curriculum {
                 display: none;
             }
+
+            
+
+            @media print{
+                .no-print, .no-print *{
+                  display: none !important;
+                } 
+                body {
+                  margin:0;
+                  padding:0;
+                }
+              }
+                @page {               
+                    size: A4;
+                    margin: 0mm;
+              }
+              
+
+
+
+
+
             </style>
 
 <!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post" required> -->
         <form id="regFormDisp" name="regFormDisp" action="/action_page.php" onsubmit="return validateFormDisp()" method="post" required>
             <h1>Curriculum Generator</h1>
+            <hr/>
             <!-- One "tab" for each step in the form: -->
             <div class="tab">Name:
                 <p><input id="cName" placeholder="Complete name..."  name="cName"></p>
+                <button type="button" onclick="test()" value="Submit">Test</button>
             </div>
-            <div class="tab">Links:
-                <p><input id="linkedn" placeholder="Linkedn your linkedn's link..." name="linkedn"></p>
-                <p><input id="whatsapp" placeholder="Whatsapp..." name="lhatsapp"></p>
-                <p><input id="email" placeholder="Email..." name="email"></p>
-                <p><input id="git" placeholder="Place your git's link..." name="git"></p>
+            <div class="tab">
+                <p>Linkedn:<input id="linkedn" placeholder="Place your linkedn's link..." name="linkedn" type="text"></p>
+                <p>Whatsapp:<input id="whatsapp" placeholder="Place your Whatsapp number..." name="lhatsapp"></p>
+                <p>Email:<input id="email" placeholder="Place your Email address..." name="email"></p>
+                <p>Git:<input id="git" placeholder="Place your git's link..." name="git"></p>
             </div>
             <div class="tab">Sumary:
                 <p><input id="sumary" placeholder="Describe your professional aspiration..." name="sumary"></p>
             </div>
-            <div class="tab">Jobs:
-                <p><input id="employerName" placeholder="Employer..." name="employerName"></p>
-                <p><input id="jobName" placeholder="Job..." name="jobName"></p>
-                <p><input id="startDateJob" placeholder="Start Date..." name="startDateJob" type="month"></p>
-                <p><input id="endDateJob" placeholder="End Date..." name="endDateJob" type="month"></p>
-                <p><input id="responsibilities" placeholder="Describe your responsibilities.." name="responsibilities"></p>
+            <div class="tab" id="jobtab">
+                <div id="jobduplicate">
+                    <p>Employer:<input id="employerName" placeholder="Employer..." name="employerName"></p>
+                    <p>Job:<input id="jobName" placeholder="Job..." name="jobName"></p>
+                    <p>Start Date:<input id="startDateJob" placeholder="Start Date..." name="startDa/teJob" type="month"></p>
+                    <p>End Date:<input id="endDateJob" placeholder="End Date..." name="endDateJob" type="month"></p>
+                    <p>Responsabilities:<input id="responsibilities" placeholder="Describe your responsibilities.." name="responsibilities"></p>
+                    <hr/>
+                </div>
+                <button type="button" onclick="codeduplicate('jobduplicate')">+</button> 
             </div>
-            <div class="tab">Skills:
-                <p><input id="skillName" placeholder="Name your skill..." name="skillName"></p>
-                <p><input id="skillDescrip" placeholder="Describe your skill..." name="skillDescrip"></p>
+            <div class="tab">
+                <p>Skills:<input id="skillName" placeholder="Name your skill..." name="skillName"></p>
+                <p>Skill Description:<input id="skillDescrip" placeholder="Describe your skill..." name="skillDescrip"></p>
             </div>
-            <div class="tab">Educational:
-                <p><input id="institutionName" placeholder="Institution Name..." name="institutionName"></p>
-                <p><input id="courseName" placeholder="Course Name..." name="courseName"></p>
-                <p><input id="startDateCourse" placeholder="Start Date..." name="startDateCourse" type="month"></p>
-                <p><input id="endDateCourse" placeholder="End Date..." name="endDateCourse" type="month"></p>
-                <p><input id="courseStatus" placeholder="Status of the course..." name="courseStatus"></p>
+            <div class="tab">
+                <div id="educduplicate">
+                    <p>Educational Institution:<input id="institutionName" placeholder="Institution Name..." name="institutionName"></p>
+                    <p>Course:<input id="courseName" placeholder="Course Name..." name="courseName"></p>
+                    <p>Start Date:<input id="startDateCourse" placeholder="Start Date..." name="startDateCourse" type="month"></p>
+                    <p>End Date:<input id="endDateCourse" placeholder="End Date..." name="endDateCourse" type="month"></p>
+                    <p>Status:<input id="courseStatus" placeholder="Status of the course..." name="courseStatus"></p>
+                    <hr/>
+                </div>
+            <button type="button" onclick="codeduplicate('educduplicate')">+</button> 
             </div>
-       <div style="overflow:auto;">
+            <div style="overflow:auto;">
                 <div style="float:right;">
                     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                     <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                    <!-- <button id="generateCV" onclick=generateCV() value="Submit">Generate CV</button> -->
                     <button type="button" id="generateCV" onclick="finishedCV()" value="Submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Generate CV</b/utton>
                 </div>
             </div>
@@ -150,14 +181,14 @@
 
         <!-- modal for show finished Curriculum Vitae and donwload a pdf generated : -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Curriculum</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modal-body">
-                        <h1 id="name"></h1>
+                        <h1 class="output" id="name"></h1>
                         <h4>Frontend Developer</h4>
                         <hr/>
                         <section>
@@ -170,41 +201,42 @@
                         <hr/>
                         <section>
                             <h2>Sumary</h2>
-                            <p id="sum"></p>
+                            <p class="output" id="sum"></p>
                         </section>
                         <hr/>
                         <section>
+                            <div>
                             <h2>Experience</h2>
-                            <ol>
-                                <li>
-                                    <p><b id="jName"></b> at <b id="empName"></b> <br/>
-                                    <span><small id="jStartDate"></small><small id="jEndDate"></small></span>    
-                                    </p>
-                                    <p id="jobD"></p>
+                            <ul>
+                                <li class="output" id="expOutput">
+                                    <p><b class="output" id="jName"></b> at <b class="empName" id="empName"></b></p><br/>
+                                    <p><span><small class="output" id="jStartDate"></small><small class="output" id="jEndDate"></small></span></p>
+                                    <p class="output" id="jobDescr"></p>
                                 </li>
-                            </ol>
+                            </ul>
+                            </div>
                         </section>
                         <hr/>
                         <section>
                             <h2>Skills</h2>
                             <ul>
-                                <li><b id="skill"></b>: <small id="skillD"></small></li>
+                                <li><b class="output" id="skill"></b>: <small class="output" id="skillD"></small></li>
                             </ul>
                         </section>
                         <hr/>
                         <section>
-                          <h2>Education</h2>
-                          <ul>
-                                <li>
-                                    <p><b id="iName"></b>: <small id="cname"></small></p>
-                                    <small id="cStartDate"></small><small id="cEndDate"></small> - <small id="cStatus"></small>    
+                            <h2>Education</h2>
+                            <ul>
+                                <li class="output" id="educOutput">
+                                    <p><b class="output" id="iName"></b>: <small class="output" id="crsName"></small></p>
+                                    <p><small class="output" id="cStartDate"></small><small class="output" id="cEndDate"></small> - <small class="output" id="cStatus"></small></p>
                                 </li>
-                          </ul>
+                            </ul>
                         </section>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Download CV.pdf</button>
+                        <button type="button" class="btn btn-secondary" onclick="clean()" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="window.downloadpdf()">Download CV.pdf</button>
                     </div>
                 </div>
             </div>
@@ -215,49 +247,144 @@
         
         <script>
 
-// this function executes js for het input.value and output in CV 
+            function test(){
+                const x = document.querySelectorAll('form input')
+                const btn = document.querySelectorAll('form button')
+                   
+                    x[0].value = 'lalala'
+                    btn[4].click()
+                    x[1].value = 'lalala'
+                    x[2].value = 'lalala'
+                    x[3].value = 'lalala'
+                    x[4].value = 'lalala'
+                    btn[4].click()
+                    x[5].value = 'lalala'
+                    btn[4].click()
+                    x[6].value = 'lalala'
+                    x[7].value = 'lalala'
+                    x[8].value = '2022-11'
+                    x[9].value = '2022-11'
+                    x[10].value = 'lalala'
+                    btn[4].click()
+                    x[11].value = 'lalala'
+                    x[12].value = 'lalala'
+                    btn[4].click()
+                    x[13].value = 'lalala'
+                    x[14].value = 'lalala'
+                    x[15].value = '2022-11'
+                    x[16].value = '2022-11'
+                    x[17].value = 'lalala'
+                    btn[5].click()
+            }
+            
+
+
+            // function codeduplicate(typeduplicate){
+
+            //     if (typeduplicate == 'jobduplicate'){
+
+            //         const element = document.getElementById("jobduplicate");
+            //         const clone = element.cloneNode(true);
+            //         document.getElementById("jobduplicate").appendChild(clone);
+                    
+            //         const elements = document.getElementById("expOutput");
+            //         const clones = elements.cloneNode(true);
+            //         document.getElementById("expOutput").appendChild(clones);
+            // }
+
+            //     if (typeduplicate == 'educduplicate'){
+
+            //         const element = document.getElementById("educduplicate");
+            //         const clone = element.cloneNode(true);
+            //         document.getElementById("educduplicate").appendChild(clone);
+                
+            //         const elements = document.getElementById("educOutput");
+            //         const clones = elements.cloneNode(true);
+            //         document.getElementById("educOutput").appendChild(clones);
+                    
+            //     }
+
+            // }
+
+            function clean(){
+            // location.reload()
+          
+                // const x = document.querySelectorAll('form input')
+                // // console.log('x', x)
+                
+                // for (var i=0; i < x.length; i++){
+                //     // console.log('x[i]',x[i].value)
+                    
+                //     x[i].value = '';}
+
+                // const btn = document.querySelectorAll('form button')
+                   
+                //        btn[3].click()
+                //        btn[3].click()
+                //        btn[3].click()
+                //        btn[3].click()
+                //        btn[3].click()
+
+
+                element = document.querySelectorAll('#modal-body .output');
+                console.log('element', element)
+                
+                for(var i=0;i<element.length;i++){element[i].innerText = '';}
+                }
+
+// this function executes js for get input.value and output in CV 
+
             function finishedCV() {
-                const inputElements = document.querySelectorAll("input")
-                const data_ids = []
-                const a = []
-                const data_output =[]
-                const b = []
+                            
+
+                const inputElements = document.querySelectorAll("form input")
+                data_ids = []
+                a = []
+                const outputElements = document.querySelectorAll("#modal-body [id]");
+                data_output = []
+                b = []
+                c = []
+
                 for (var i = 0; i < inputElements.length; i++) {
-                    data_ids[i] = (inputElements[i].id)
+                    data_ids[i] = (inputElements[i].Id)
                     a[i] = inputElements[i].value
 
                 }
+    
+                // console.log('outputElementsantes', outputElements)
+                // console.log('dataoutputantes', data_output)
+ 
+                // outputElements = 0;
 
                 for (var j = 0; j < data_ids.length; j++) {
-                const outputElements = document.getElementById("modal-body").querySelectorAll("[id]");
-                    data_output[j] = (outputElements[j].id)
-                    const c = document.createTextNode(a[j]);
 
+                    
+                    
                     if (a.length > 0){
-                        const b = document.getElementById(data_output[j]);
+                        data_output[j] = (outputElements[j].id)
+                        b = document.getElementById(data_output[j]);
+                        c = document.createTextNode(a[j]);
                         b.insertBefore(c, b.children[j]);
 
                         const data = ['linkedn', 'whatsapp', 'git'];
 
-                        const llinkedn = document.getElementsByClassName("llinkedn");
+                        llinkedn = document.getElementsByClassName("llinkedn");
                         llinkedn[0].setAttribute('href', linkedn.value)
 
-                        const lwhats = document.getElementsByClassName("lwhats")
+                        lwhats = document.getElementsByClassName("lwhats")
                         var whats="https://web.whatsapp.com/send?phone=" + whatsapp.value // pattern +xx xx xxxxx xxxx
                         lwhats[0].setAttribute('href', whats);
 
-                        const lgit = document.getElementsByClassName("lgit");
-                        lgit[0].setAttribute('href', git.value);    
+                        lgit = document.getElementsByClassName("lgit");
+                        lgit[0].setAttribute('href', git.value);   
                     }
                        }
+                    //    console.log('outputElementsdepois', outputElements)
+                    //    console.log('dataoutput', data_output)
+                    
+
                     }
-                   
                     
-
-
-
-                    
-            
             var currentTab = 0; // Current tab is set to be the first tab (0)
             showTab(currentTab); // Display the current tab
 
@@ -335,8 +462,12 @@
 //... and adds the "active" class on the current step:
                 x[n].className += " active";
             }
-//function finishedCV() executes
 
+
+            function downloadpdf() { window.print(); }
+
+
+        
         </script>
     </body>
 </html>
