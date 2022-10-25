@@ -219,68 +219,6 @@
 
         </form>
 
-        <!-- modal for show finished Curriculum Vitae and donwload a pdf generated : -->
-        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div id="modal-content" class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"><b>Curriculum Vitae</b></h5>
-                        <button type="button" class="btn-close" onclick="clean()" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="modal-body">
-                        <h1 class="foutput output"><b></b></h1>
-                        <h4>Frontend Developer</h4>
-                        <hr/>
-                        <section>
-                            <p><a class="llinkedn" href="">Linkedn: <b class="foutput output"></b></a>  <a class="lwhats" href="">Whatsapp: <b class="foutput output"></b></a></p></br>
-                            <p><a class="lemail" href="">Email: <b class="foutput output"></b></a>  <a class="lgit" href="">Git: <b class="foutput output"></b></a></p>
-                        </section>
-                        <hr/>
-                        <section>
-                            <h2>Sumary</h2>
-                            <p class="foutput output"></p>
-                        </section>
-                        <hr/>
-                        <section>
-                            <div>
-                            <h2>Experience</h2>
-                            <ul class="idExp">
-                                <li class="duplicJobOutput">
-                                    <p><b class="foutput expOutput output"></b> at <b class="foutput expOutput output" ></b></p>
-                                    <p><small class="foutput expOutput output"></small> -  <small class="foutput expOutput output"></small></p>
-                                    <p class="foutput expOutput output"></p>
-                                </li>
-                            </ul>
-                            </div>
-                        </section>
-                        <hr/>
-                        <section>
-                            <h2>Skills</h2>
-                            <ul class="idSkill">
-                                <li class="duplicSkOutput">
-                                    <p><b class="foutput output"></b>: <small class="foutput output"></small></p>
-                                </li>
-                            </ul>
-                        </section>
-                        <hr/>
-                        <section>
-                            <h2>Education</h2>
-                            <ul class="idEduc">
-                                <li class="duplicEducOutput">
-                                    <p><b class="foutput educOutput output"></b>: <small class="foutput educOutput output"></small></p>
-                                    <p><small class="foutput educOutput output"></small> - <small class="foutput educOutput output"></small> - <small class="foutput educOutput output"></small></p>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" id="closemodal" class="btn btn-secondary" onclick="clean()" data-bs-dismiss="modal">Close</button>
-                        <button type="button" id="downloadpdf" onclick="downloadpdf()" id="closemodal" class="btn btn-secondary" data-bs-dismiss="modal">Download CV.pdf</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <div id="modal-body2" style="display: none;">
             <h1 class="foutput2 output2"><b></b></h1>
             <h4>Frontend Developer</h4>
@@ -331,84 +269,43 @@
         
         <script>
 
-            function test(){
-                const x = document.querySelectorAll('form .inputElements')
-                const btn = document.querySelectorAll('button')
+            // function test(){
+            //     const x = document.querySelectorAll('form .inputElements')
+            //     const btn = document.querySelectorAll('button')
                    
-                    x[0].value = 'Don Corleoni'
-                    btn[5].click()
-                    x[1].value = 'https://www.google.com'
-                    x[2].value = '55 99999 9999'
-                    x[3].value = 'test@mail.com'
-                    x[4].value = 'https://www.google.com'
-                    btn[5].click()
-                    x[5].value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt i'
-                    btn[5].click()
-                    x[6].value = 'Lorem ipsum'
-                    x[7].value = 'Lorem ipsum'
-                    x[8].value = '2022-11'
-                    x[9].value = '2022-11'
-                    x[10].value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, q'
-                    btn[5].click()
-                    x[11].value = 'Lorem ipsum'
-                    x[12].value = 'Lorem ipsum'
-                    btn[5].click()
-                    x[13].value = 'Lorem ipsum'
-                    x[14].value = 'Lorem ipsum'
-                    x[15].value = '2022-11'
-                    x[16].value = '2022-11'
-                    x[17].value = 'Lorem ipsum'
-                    btn[6].click()
-                    // btn[9].click()
+            //         x[0].value = 'Don Corleoni'
+            //         btn[5].click()
+            //         x[1].value = 'https://www.google.com'
+            //         x[2].value = '55 99999 9999'
+            //         x[3].value = 'test@mail.com'
+            //         x[4].value = 'https://www.google.com'
+            //         btn[5].click()
+            //         x[5].value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt i'
+            //         btn[5].click()
+            //         x[6].value = 'Lorem ipsum'
+            //         x[7].value = 'Lorem ipsum'
+            //         x[8].value = '2022-11'
+            //         x[9].value = '2022-11'
+            //         x[10].value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, q'
+            //         btn[5].click()
+            //         x[11].value = 'Lorem ipsum'
+            //         x[12].value = 'Lorem ipsum'
+            //         btn[5].click()
+            //         x[13].value = 'Lorem ipsum'
+            //         x[14].value = 'Lorem ipsum'
+            //         x[15].value = '2022-11'
+            //         x[16].value = '2022-11'
+            //         x[17].value = 'Lorem ipsum'
+            //         btn[6].click()
+            //         // btn[9].click()
 
-
-                    // x[0].value = 'Don Corleoni'
-                    // btn[4].click()
-                    // x[1].value = 'https://www.google.com'
-                    // x[2].value = '55 99999 9999'
-                    // x[3].value = 'test@mail.com'
-                    // x[4].value = 'https://www.google.com'
-                    // btn[4].click()
-                    // x[5].value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                    // btn[4].click()
-                    // x[6].value = 'Lorem ipsum'
-                    // x[7].value = 'Lorem ipsum'
-                    // x[8].value = '2022-11'
-                    // x[9].value = '2022-11'
-                    // x[10].value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                    // btn[1].click()
-                    // x[11].value = 'Lorem ipsum'
-                    // x[12].value = 'Lorem ipsum'
-                    // x[13].value = '2022-11'
-                    // x[14].value = '2022-11'
-                    // x[15].value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                    // btn[4].click()
-                    // x[16].value = 'Lorem ipsum'
-                    // x[17].value = 'Lorem ipsum'
-                    // btn[4].click()
-                    // x[18].value = 'Lorem ipsum'
-                    // x[19].value = 'Lorem ipsum'
-                    // x[20].value = '2022-11'
-                    // x[21].value = '2022-11'
-                    // x[22].value = 'Lorem ipsum'
-                    // btn[2].click()
-                    // x[23].value = 'Lorem ipsum'
-                    // x[24].value = 'Lorem ipsum'
-                    // x[25].value = '2022-11'
-                    // x[26].value = '2022-11'
-                    // x[27].value = 'Lorem ipsum' 
-                    // btn[5].click()
-            }
+            // }
 
             function codeduplicate(typeduplicate){
 
                     const jobNode = document.getElementsByClassName("duplicJob");
                     const jobClone = jobNode[0].cloneNode(true);
                     const job = document.getElementsByClassName("tabJob");
-
-                    // const jobNodeOutput = document.getElementsByClassName("duplicJobOutput");
-                    // const jobCloneOutput = jobNodeOutput[0].cloneNode(true);
-                    // const jobOutput = document.getElementsByClassName("idExp");
 
                     const jobNodeOutput2 = document.getElementsByClassName("duplicJobOutput2");
                     const jobCloneOutput2 = jobNodeOutput2[0].cloneNode(true);
@@ -417,7 +314,6 @@
                     for (i=0; i < jobNode.length; i++){
                         if (typeduplicate == 'jobDuplic'){
                            job[0].appendChild(jobClone);
-                        //    jobOutput[0].appendChild(jobCloneOutput)
                            jobOutput2[0].appendChild(jobCloneOutput2)
                         }
                     }
@@ -426,10 +322,6 @@
                     const SkillClone = SkillNode[0].cloneNode(true);
                     const Skill = document.getElementsByClassName("tabSkill");
 
-                    // const SkillNodeOutput = document.getElementsByClassName("duplicSkOutput");
-                    // const SkillCloneOutput = SkillNodeOutput[0].cloneNode(true);
-                    // const SkillOutput = document.getElementsByClassName("idSkill");
-
                     const SkillNodeOutput2 = document.getElementsByClassName("duplicSkOutput2");
                     const SkillCloneOutput2 = SkillNodeOutput2[0].cloneNode(true);
                     const SkillOutput2 = document.getElementsByClassName("idSkill2");
@@ -437,7 +329,6 @@
                     for (i=0; i < SkillNode.length; i++){
                         if (typeduplicate == 'skillDuplic'){
                             Skill[0].appendChild(SkillClone);
-                            // SkillOutput[0].appendChild(SkillCloneOutput)
                             SkillOutput2[0].appendChild(SkillCloneOutput2)
                         }
                     }
@@ -446,10 +337,6 @@
                     const EducClone = EducNode[0].cloneNode(true);
                     const Educ = document.getElementsByClassName("tabEduc");
 
-                    // const EducNodeOutput = document.getElementsByClassName("duplicEducOutput");
-                    // const EducCloneOutput = EducNodeOutput[0].cloneNode(true);
-                    // const EducOutput = document.getElementsByClassName("idEduc");
-
                     const EducNodeOutput2 = document.getElementsByClassName("duplicEducOutput2");
                     const EducCloneOutput2 = EducNodeOutput2[0].cloneNode(true);
                     const EducOutput2 = document.getElementsByClassName("idEduc2");
@@ -457,70 +344,10 @@
                     for (i=0; i < EducNode.length; i++){
                         if (typeduplicate == 'educDuplic'){
                             Educ[0].appendChild(EducClone);
-                            // EducOutput[0].appendChild(EducCloneOutput);
                             EducOutput2[0].appendChild(EducCloneOutput2);
                         }
                     }
-
-
                 }
-
-
-            // function codeduplicate(typeduplicate){
-
-            //     const vininha = (text) => {
-            //         console.log('text', text)
-            //     }
-        
-            //         clicks += 1;
-             
-            //       if (clicks > 0){
-            //         vininha('text')
-
-            //       } else {
-
-            //       }
-            // }
-
-        //     function clean() {
-        //     // location.reload()
-          
-        //         // const x = document.querySelectorAll('form input')
-        //         // // console.log('x', x)
-        //         // for (var i=0; i < x.length; i++){
-        //         //     // console.log('x[i]',x[i].value)
-        //         //     x[i].value = '';}
-
-
-        //         // // this function is to be used on test
-        //         // const btn = document.querySelectorAll('form button')
-        //         //        btn[3].click()
-        //         //        btn[3].click()
-        //         //        btn[3].click()
-        //         //        btn[3].click()
-        //         //        btn[3].click()
-        //         //        btn[2].click()
-
-        //     // const element = document.querySelectorAll("#modal-body .foutput");
-        //     //     // console.log('element', element)
-         
-        //     //     for(i=0;i<element.length;i++){
-        //     //         element[i].innerText = '';
-        //     //         // console.log('elementdepois', element[i])
-        //     //     }
-
-        //         const element2 = document.querySelectorAll("#modal-body2 .foutput2");
-        //         // console.log('element', element)
-         
-        //         for(i=0;i<element2.length;i++){
-        //             element2[i].innerText = '';
-        //             // console.log('elementdepois', element[i])
-        //         }
-
-        // }
-
-
-
 
 // this function executes js for get input.value and output in CV 
 
@@ -534,52 +361,6 @@
                     data_ids[i] = (inputElements[i].Id)
                     a[i] = inputElements[i].value
                 }
-    
-                // console.log('outputElementsantes', outputElements)
-                // console.log('dataoutputantes', data_output)
-            
-                // const outputElements = document.getElementsByClassName("foutput");
-                // // data_output = []
-                // // console.log('outputElements', outputElements)
-                // b = []
-                // c = []
-
-                // for (var j = 0; j < data_ids.length; j++) {
-                //     if (a.length > 0){
-                //         // data_output[j] = (outputElements[j])
-                //         // b = document.getElementsByClassName(data_output[j]);
-                //         b = outputElements[j]
-                //         c = document.createTextNode(a[j]);
-                //         b.insertBefore(c, b.children[j]);
-
-                //         const data = ['linkedn', 'whatsapp', 'git'];
-
-                //         llinkedn = document.getElementsByClassName("llinkedn");
-                //         llinkedn[0].setAttribute('href', linkedn.value)
-
-                //         lwhats = document.getElementsByClassName("lwhats")
-                //         var whats="https://web.whatsapp.com/send?phone=" + whatsapp.value // pattern +xx xx xxxxx xxxx
-                //         lwhats[0].setAttribute('href', whats);
-
-                //         lgit = document.getElementsByClassName("lgit");
-                //         lgit[0].setAttribute('href', git.value);   
-                //         }
-                //     }
-                //     //    console.log('outputElementsdepois', outputElements)
-                //     //    console.log('dataoutput', data_output)
-             
-                    // document.addEventListener("keydown",function(e) {
-                    //     var charCode = e.charCode || e.keyCode || e.which;
-                    //     if (charCode == 27){
-                    //         const element = document.querySelectorAll("#modal-body .foutput");
-                    //     // console.log('element', element)
-                        
-                    //     for(i=0;i<element.length;i++){
-                    //         element[i].innerText = '';
-                    //         // console.log('elementdepois', element[i])
-                    //     }
-                    //     }
-                    // })
 
                 const outputElements2 = document.getElementsByClassName("foutput2");
                 // data_output = []
@@ -698,22 +479,6 @@
                 y = document.querySelector('#modal-body2')
                 y.style.display='unset'
 
-                // var content = document.getElementById("modal-body");
-                // const para = document.createElement("div");
-                // let html = document.getElementById("myList").innerHTML;
-                // // para.innerHTML = "This is a paragraph.";
-                // document.getElementById("modal-body2").appendChild(para);
-
-
-                // const html = document.getElementById("modal-body").innerHTML;
-                // const para = document.createElement("div");
-                // para = document.getElementById("modal-body");
-                // document.getElementById("modal-body2") = para.innerHTML;
-                
-      
-                
-
-
             //         // var win = window.open('','','left=0,top=0,width=552,height=477,toolbar=0,scrollbars=0,status =0');
             //         // document.write(content);
             setTimeout(() => {
@@ -722,13 +487,6 @@
             // //         // win.window.close();
                     
             }
-
-
-            // function xxx(){
-            //     query
-
-            // }
-
         
         </script>
     </body>
