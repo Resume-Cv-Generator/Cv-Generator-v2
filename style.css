@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.textalign {
+  text-align: center;
+}
+
+a {
+  /* color: white; */
+  padding: 50px;
+}
+
+a:hover {
+  color: black;
+}
+
+.logo {
+	width: 116px;
+}
+
+.header {
+  background-color: rgb(78, 53, 220);
+  color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  height: 62px;
+	width: 100%;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  color: black;
+  margin: 0;
+  padding: 20px;
+  width: 400px;
+  background-color: rgb(78, 53, 220);
+  position: fixed;
+  height: 96%;
+  overflow: auto;
+}
+
+div.content {
+  margin-left: 400px;
+  padding: 1px 16px;
+  position: fixed;
+  height: 96%;
+  overflow: auto;
+  width: 100%;
+}
